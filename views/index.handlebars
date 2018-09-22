@@ -1,14 +1,19 @@
-<h1>Burgers!</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Burger Eater!</h1>
+</div>
 
-<h2>Burgers that are not eaten!</h2>
-
-<ol>
-  {{#each burgers}}
-    {{#unless eaten}}
-      {{> burgers/burger-block eat=true}}
-    {{/unless}}
-  {{/each}}
-</ol>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Burgers that are not eaten!</h5>
+    <ol>
+      {{#each burgers}}
+        {{#unless eaten}}
+          {{> burgers/burger-block eat=true}}
+        {{/unless}}
+      {{/each}}
+    </ol>
+  </div>
+</div>
 
 <h2>Burgers that are eaten!</h2>
 
