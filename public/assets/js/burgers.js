@@ -3,21 +3,22 @@
 // PUBLIC MAIN LOGIC
 
 $(function() {
-  $(".change-eaten").on("click", function(event) {
+    //change eaten is not working
+  $(".change-eat").on("click", function(event) {
     var id = $(this).data("id");
-    var newEaten = $(this).data("newEaten");
+    var newEat = $(this).data("neweat");
 
-    var newEatenState = {
-      eaten: newEaten
+    var newEatState = {
+      eaten: newEat
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newEatenState
+      data: newEatState
     }).then(
       function() {
-        console.log("changed eaten to", newEaten);
+        console.log("changed eaten to", newEat);
         // Reload the page to get the updated list
         location.reload();
       }
