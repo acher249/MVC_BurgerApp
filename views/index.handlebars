@@ -1,7 +1,9 @@
 <div class="jumbotron">
   <h1 class="display-4">Burger Eater!</h1>
+  <img src="https://rustlersonline.com/wp-content/uploads/Gourmet-Classic.png" height="140" width="auto">
 </div>
 
+<!-- Not Eaten Burgers -->
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Burgers that are not eaten!</h5>
@@ -15,15 +17,19 @@
   </div>
 </div>
 
-<h2>Burgers that are eaten!</h2>
-
-<ol>
-  {{#each burgers}}
-    {{#if eaten}}
-      {{> burgers/burger-block eat=false}}
-    {{/if}}
-  {{/each}}
-</ol>
+<!-- Eaten Burgers -->
+<div class="card" style="width: 18rem;" id="rightPanel">
+  <div class="card-body">
+    <h5 class="card-title">Burgers that are eaten!</h5>
+    <ol>
+      {{#each burgers}}
+        {{#if eaten}}
+          {{> burgers/burger-block eat=false}}
+        {{/if}}
+      {{/each}}
+    </ol>
+  </div>
+</div>
 
 <h2>Add a Burger</h2>
 <form class="create-form">

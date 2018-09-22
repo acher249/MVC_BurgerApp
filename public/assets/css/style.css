@@ -25,3 +25,7 @@ h1, h2 {
 .create-form {
   text-align: center;
 }
+
+#rightPanel {
+  float:right;
+}
