@@ -16,7 +16,7 @@
     <!-- Not Eaten Burgers -->
     <div class="card col-sm-3" style="margin-left: 30px;">
       <div class="card-body">
-        <h5 class="card-title">Burgers that are not eaten!</h5>
+        <h5 class="card-title style="text-align: center;"">Burgers that are not eaten!</h5>
         <ol>
           {{#each burgers}}
             {{#unless eaten}}
@@ -30,7 +30,7 @@
     <!-- Add a Burger -->
     <div class="card col-sm-5" style="margin-right: 30px; margin-left: 30px;">
       <div class="card-body">
-        <h5 class="card-title">Add A Burger:</h5>
+        <h5 class="card-title" style="text-align: center;">Add A Burger:</h5>
         <form class="create-form">
 
           <div class="form-group">
@@ -52,7 +52,7 @@
     <!-- Eaten Burgers -->
     <div class="card col-sm-3" style="margin-right: 30px;" id="rightPanel">
       <div class="card-body">
-        <h5 class="card-title">Burgers that are eaten!</h5>
+        <h5 class="card-title" style="text-align: center;">Burgers that have been eaten!</h5>
         <ol>
           {{#each burgers}}
             {{#if eaten}}
