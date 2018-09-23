@@ -1,49 +1,66 @@
 <div class="jumbotron">
   <h1 class="display-4">Burger Eater!</h1>
-  <img src="https://rustlersonline.com/wp-content/uploads/Gourmet-Classic.png" height="140" width="auto">
-</div>
-
-<!-- Not Eaten Burgers -->
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Burgers that are not eaten!</h5>
-    <ol>
-      {{#each burgers}}
-        {{#unless eaten}}
-          {{> burgers/burger-block eat=true}}
-        {{/unless}}
-      {{/each}}
-    </ol>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="card col-sm-5" style="background-color: #e8ecef; border: 0px;"></div>
+      <div class="card col-sm-2">
+        <img src="https://rustlersonline.com/wp-content/uploads/Gourmet-Classic.png" height="140" width="180"> 
+      </div>
+        <div class="card col-sm-5" style="background-color: #e8ecef; border: 0px;"></div>
+    </div>
   </div>
 </div>
 
-<!-- Eaten Burgers -->
-<div class="card" style="width: 18rem;" id="rightPanel">
-  <div class="card-body">
-    <h5 class="card-title">Burgers that are eaten!</h5>
-    <ol>
-      {{#each burgers}}
-        {{#if eaten}}
-          {{> burgers/burger-block eat=false}}
-        {{/if}}
-      {{/each}}
-    </ol>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Not Eaten Burgers -->
+    <div class="card col-sm-3" style="margin-left: 30px;">
+      <div class="card-body">
+        <h5 class="card-title">Burgers that are not eaten!</h5>
+        <ol>
+          {{#each burgers}}
+            {{#unless eaten}}
+              {{> burgers/burger-block eat=true}}
+            {{/unless}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+
+    <!-- Add a Burger -->
+    <div class="card col-sm-5" style="margin-right: 30px; margin-left: 30px;">
+      <div class="card-body">
+        <h5 class="card-title">Add A Burger:</h5>
+        <form class="create-form">
+
+          <div class="form-group">
+            <label for="ca">Burger Name:</label>
+            <input type="text" id="ca" name="name">
+          </div>
+
+          <div class="form-group">
+            <label for="eaten">Eaten?</label><br>
+            <input type="radio" name="eaten" value="1" checked> Eaten!<br>
+            <input type="radio" name="eaten" value="0"> Not Eaten!
+          </div>
+
+          <button type="submit">Add Burger</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Eaten Burgers -->
+    <div class="card col-sm-3" style="margin-right: 30px;" id="rightPanel">
+      <div class="card-body">
+        <h5 class="card-title">Burgers that are eaten!</h5>
+        <ol>
+          {{#each burgers}}
+            {{#if eaten}}
+              {{> burgers/burger-block eat=false}}
+            {{/if}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
   </div>
 </div>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="eaten">Eaten?</label><br>
-    <input type="radio" name="eaten" value="1" checked> Eaten!<br>
-    <input type="radio" name="eaten" value="0"> Not Eaten!
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
